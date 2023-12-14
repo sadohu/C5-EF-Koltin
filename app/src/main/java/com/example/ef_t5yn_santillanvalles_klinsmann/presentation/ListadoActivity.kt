@@ -2,6 +2,7 @@ package com.example.ef_t5yn_santillanvalles_klinsmann.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ef_t5yn_santillanvalles_klinsmann.R
@@ -15,7 +16,6 @@ class ListadoActivity : AppCompatActivity(), ListadoAdapter.ICard {
     private var listProducto : MutableList<Producto> = ArrayList()
     private lateinit var listadoAdapter: ListadoAdapter
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityListadoBinding.inflate(layoutInflater)
@@ -26,6 +26,11 @@ class ListadoActivity : AppCompatActivity(), ListadoAdapter.ICard {
 
     private fun initValues(){
         val email = intent.getStringExtra("email")!!
+        if(email == "gmail")
+            binding.btnAdd.visibility = View.VISIBLE
+        else
+            binding.btnAdd.visibility = View.GONE
+
         println("Email: $email")
 
 

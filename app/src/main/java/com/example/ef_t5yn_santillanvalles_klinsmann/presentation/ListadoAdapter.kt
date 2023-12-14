@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.constraintlayout.utils.widget.ImageFilterView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.ef_t5yn_santillanvalles_klinsmann.R
 import com.example.ef_t5yn_santillanvalles_klinsmann.domain.Producto
 
@@ -34,7 +35,12 @@ class ListadoAdapter(var items : MutableList<Producto>, var iCard : ICard) : Rec
     }
 
     override fun onBindViewHolder(holder: ListadoAdapter.ViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        val item = items[position]
+        holder.titulo.text = item.nombre
+        holder.descripcion.text = item.descripcion
+        Glide.with(holder.itemView.context)
+            .load(item.img)
+            .into(holder.img)
     }
 
     override fun getItemCount(): Int {

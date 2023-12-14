@@ -13,6 +13,9 @@
         android:theme="@style/Theme.EF_T5YN_SantillanValles_Klinsmann"
         tools:targetApi="31">
         <activity
+            android:name=".presentation.AgregarProductoActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.ListadoActivity"
             android:exported="false" />
         <activity
