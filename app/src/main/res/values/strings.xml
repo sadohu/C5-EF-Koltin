@@ -5,4 +5,7 @@
     <string name="ingrese_su_password">Ingrese su password</string>
     <string name="ingresar">Ingresar</string>
     <string name="registrar">Registrar</string>
+    <string name="catalogo">Catalogo de Productos</string>
+    <string name="producto">titulo_producto</string>
+    <string name="descripcion">descripcion_producto</string>
 </resources>
