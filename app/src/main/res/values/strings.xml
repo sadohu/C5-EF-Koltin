@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">EF_T5YN_SantillanValles_Klinsmann</string>
+    <string name="login_aplicacion">Login Catalogo de Productos</string>
+    <string name="ingrese_su_email">Ingrese su email</string>
+    <string name="ingrese_su_password">Ingrese su password</string>
+    <string name="ingresar">Ingresar</string>
+    <string name="registrar">Registrar</string>
+</resources>
