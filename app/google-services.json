@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "809207522898",
+    "project_id": "ef-santillanvalles-d0fbb",
+    "storage_bucket": "ef-santillanvalles-d0fbb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:809207522898:android:aca28f45b8db3b4815218b",
+        "android_client_info": {
+          "package_name": "com.example.ef_t5yn_santillanvalles_klinsmann"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFmdw8C67asXc0biYSumQseL_nYAGjJCw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

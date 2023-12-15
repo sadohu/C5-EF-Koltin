@@ -1,9 +1,282 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".presentation.AgregarProductoActivity">
+
+    <TextView
+        android:id="@+id/lblTituloAgregar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/lblTituloAgregar"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/lyNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lblTituloAgregar">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7"
+            android:gravity="end"
+            android:text="@string/lblNombre_AgregarProducto" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:hint="@string/lblIngresarNombre" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lyDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lyNombre">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7"
+            android:gravity="end"
+            android:text="@string/lblDescripcion_AgregarProducto" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:hint="@string/lblIngresarDescripcion" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lyMarca"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lyDescription">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7"
+            android:gravity="end"
+            android:hint="@string/lblMarca_AgregarProducto" />
+
+        <Spinner
+            android:id="@+id/spnMarca"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_weight="0.3"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lyCategoria"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lyMarca">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7"
+            android:gravity="end"
+            android:hint="@string/lblCategoría_AgregarProducto" />
+
+        <Spinner
+            android:id="@+id/spnCategoria"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_weight="0.3"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lyPrecio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lyCategoria">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7"
+            android:gravity="end"
+            android:hint="@string/lblPrecio_AgregarProducto" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtPrecio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:inputType="number"
+            android:hint="@string/lblIngresarPrecio" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lyFoto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lyPrecio">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7"
+            android:gravity="end"
+            android:hint="@string/lblFoto_AgregarProducto" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtFoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:hint="@string/lblIngresarFoto" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lyStock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lyFoto">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7"
+            android:gravity="end"
+            android:hint="@string/lblStock_AgregarProducto" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtStock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:hint="@string/lblIngresarStock"
+            android:inputType="number" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lyCantUnit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lyStock">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7"
+            android:gravity="end"
+            android:hint="@string/lblCantUnit_AgregarProducto" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtCantUnit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:layout_weight="0.3"
+            android:hint="@string/lblIngresarCantUnit" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lyUnidadMedida"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lyCantUnit">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7"
+            android:gravity="end"
+            android:hint="@string/lblUniMed_AgregarProducto" />
+
+        <Spinner
+            android:id="@+id/spnUnidadMedida"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_weight="0.3"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lyButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="40dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lyUnidadMedida">
+
+        <Button
+            android:id="@+id/btnAgregar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="0.5"
+            android:backgroundTint="@color/confirm"
+            android:text="@string/btnAdd" />
+
+        <Button
+            android:text="@string/btnCancel"
+            android:layout_weight="0.5"
+            android:layout_marginStart="10dp"
+            android:id="@+id/btnCancelar"
+            android:backgroundTint="@color/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

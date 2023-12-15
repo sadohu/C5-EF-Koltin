@@ -39,7 +39,7 @@ class ListadoAdapter(var items : MutableList<Producto>, var iCard : ICard) : Rec
         holder.titulo.text = item.nombre
         holder.descripcion.text = item.descripcion
         Glide.with(holder.itemView.context)
-            .load(item.img)
+            .load(item.foto)
             .into(holder.img)
     }
 

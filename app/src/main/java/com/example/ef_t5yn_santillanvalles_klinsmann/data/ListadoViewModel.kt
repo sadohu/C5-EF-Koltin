@@ -6,11 +6,12 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.ef_t5yn_santillanvalles_klinsmann.domain.Producto
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.launch
 import java.lang.Exception
 
 class ListadoViewModel : ViewModel(){
-//    private lateinit var firestore : FirebaseFirestore
+    private lateinit var firestore : FirebaseFirestore
     private val _getList = MutableLiveData<List<Producto>>()
     val getList : LiveData<List<Producto>> = _getList
 

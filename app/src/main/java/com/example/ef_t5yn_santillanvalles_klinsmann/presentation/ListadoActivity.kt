@@ -1,5 +1,6 @@
 package com.example.ef_t5yn_santillanvalles_klinsmann.presentation
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -38,6 +39,10 @@ class ListadoActivity : AppCompatActivity(), ListadoAdapter.ICard {
         listadoAdapter = ListadoAdapter(listProducto, this)
         binding.rvProducto.layoutManager = LinearLayoutManager(applicationContext)
         binding.rvProducto.adapter = listadoAdapter
+
+        binding.btnAdd.setOnClickListener {
+            startActivity(Intent(this, AgregarProductoActivity::class.java ))
+        }
     }
 
     private fun initObservers(){
