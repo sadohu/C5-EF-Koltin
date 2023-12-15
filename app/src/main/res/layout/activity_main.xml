@@ -45,7 +45,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etUsuario"
+                    android:id="@+id/txtEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
@@ -78,15 +78,16 @@
                 app:passwordToggleEnabled="true"
                 app:hintEnabled="false"
                 app:passwordToggleTint="@color/toggle_color">
+
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
                     android:clickable="true"
                     android:focusable="true"
+                    android:hint="@string/ingrese_su_password"
                     android:inputType="textPassword"
-                    android:hint="@string/ingrese_su_password"/>
+                    android:textColor="@color/black" />
             </com.google.android.material.textfield.TextInputLayout>
         </androidx.cardview.widget.CardView>
     </androidx.appcompat.widget.LinearLayoutCompat>

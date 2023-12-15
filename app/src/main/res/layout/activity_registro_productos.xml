@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegistroProductosActivity">
+
+    <TextView
+        android:id="@+id/lbltible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:text="Registrar productos"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblproduc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:paddingEnd="20dp"
+        android:text="Nombre"
+        app:layout_constraintEnd_toStartOf="@+id/txtProducto"
+        app:layout_constraintTop_toBottomOf="@+id/lbltible" />
+
+    <EditText
+        android:id="@+id/txtProducto"
+        android:layout_width="220dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="20dp"
+        android:hint=" Silla blanca de plástico"
+        android:textSize="13dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbltible" />
+
+    <TextView
+        android:id="@+id/lblDescrip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:paddingEnd="20dp"
+        android:text="@string/descripcion"
+        app:layout_constraintEnd_toStartOf="@+id/txtDescripcion"
+        app:layout_constraintTop_toBottomOf="@+id/lblproduc" />
+
+    <EditText
+        android:id="@+id/txtDescripcion"
+        android:layout_width="220dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:hint=" Silla de plástico PVC color blanco"
+        android:textSize="13dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtProducto" />
+
+    <Spinner
+        android:id="@+id/cboMarca"
+        android:layout_width="220dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:textSize="13dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDescripcion" />
+
+    <Spinner
+        android:id="@+id/cboCategoria"
+        android:layout_width="220dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:textSize="13dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cboMarca" />
+
+    <EditText
+        android:id="@+id/txtPrecio"
+        android:layout_width="220dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:inputType="numberDecimal"
+        android:hint=" S/ 10.00"
+        android:textSize="13dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cboCategoria" />
+
+    <EditText
+        android:id="@+id/txtFoto"
+        android:layout_width="220dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:hint=" Url de foto"
+        android:textSize="13dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPrecio" />
+
+    <EditText
+        android:id="@+id/txtStock"
+        android:layout_width="220dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:hint=" 50"
+        android:textSize="13dp"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtFoto" />
+
+    <EditText
+        android:id="@+id/txtCantidadUnitaria"
+        android:layout_width="220dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:hint=" 500"
+        android:textSize="13dp"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtStock" />
+
+    <Spinner
+        android:id="@+id/cboUnidadMedida"
+        android:layout_width="220dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:textSize="13dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCantidadUnitaria" />
+
+    <TextView
+        android:id="@+id/lblMarc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:paddingEnd="20dp"
+        android:text="@string/marca"
+        app:layout_constraintEnd_toStartOf="@+id/cboMarca"
+        app:layout_constraintTop_toBottomOf="@+id/lblDescrip" />
+
+    <TextView
+        android:id="@+id/lblCatec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="37dp"
+        android:paddingEnd="20dp"
+        android:text="categoria"
+        app:layout_constraintEnd_toStartOf="@+id/cboCategoria"
+        app:layout_constraintTop_toBottomOf="@+id/lblMarc" />
+
+    <TextView
+        android:id="@+id/lblPrec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="37dp"
+        android:paddingEnd="20dp"
+        android:text="@string/precio"
+        app:layout_constraintEnd_toStartOf="@+id/txtPrecio"
+        app:layout_constraintTop_toBottomOf="@+id/lblCatec" />
+
+    <TextView
+        android:id="@+id/lblFot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="37dp"
+        android:paddingEnd="20dp"
+        android:text="@string/foto"
+        app:layout_constraintEnd_toStartOf="@+id/txtFoto"
+        app:layout_constraintTop_toBottomOf="@+id/lblPrec" />
+
+    <TextView
+        android:id="@+id/lblStoc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="37dp"
+        android:paddingEnd="20dp"
+        android:text="@string/stock"
+        app:layout_constraintEnd_toStartOf="@+id/txtStock"
+        app:layout_constraintTop_toBottomOf="@+id/lblFot" />
+
+    <TextView
+        android:id="@+id/lblCantidadUni"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="37dp"
+        android:paddingEnd="20dp"
+        android:text="cantidad"
+        app:layout_constraintEnd_toStartOf="@+id/txtCantidadUnitaria"
+        app:layout_constraintTop_toBottomOf="@+id/lblStoc" />
+
+    <TextView
+        android:id="@+id/lblUnidaDeMed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:paddingEnd="20dp"
+        android:text="@string/unidadMedida"
+        app:layout_constraintEnd_toStartOf="@+id/cboUnidadMedida"
+        app:layout_constraintTop_toBottomOf="@+id/lblCantidadUni" />
+
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="60dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cboUnidadMedida">
+
+        <Button
+            android:id="@+id/btnGuardar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="@color/cancel"
+            android:layout_weight="1"
+            android:text="Agregar" />
+
+        <Button
+            android:id="@+id/btnLimpiar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="@color/confirm"
+            android:layout_weight="1"
+            android:text="Cancelar" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

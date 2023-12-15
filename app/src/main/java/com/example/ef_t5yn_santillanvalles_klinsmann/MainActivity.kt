@@ -1,74 +1,82 @@
 package com.example.ef_t5yn_santillanvalles_klinsmann
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.ef_t5yn_santillanvalles_klinsmann.databinding.ActivityMainBinding
-import com.example.ef_t5yn_santillanvalles_klinsmann.presentation.ListadoActivity
+import com.google.android.material.textfield.TextInputEditText
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding : ActivityMainBinding
-    private lateinit var typeMail : String
+
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        initValues()
-    }
 
-    private fun initValues() {
+        val txtEmail: TextInputEditText = binding.txtEmail
+        val txtPassword: TextInputEditText = binding.etPassword
 
         binding.btnIngresar.setOnClickListener {
-            val email = binding.etUsuario.text.toString()
-            val password = binding.etPassword.text.toString()
-
-            if(invalidForm(email, password))
-                return@setOnClickListener
-
-            initEvents(typeMail)
+            authenticateUser(txtEmail.text.toString(), txtPassword.text.toString())
         }
 
+        binding.btnRegistrar.setOnClickListener {
+            createUser(txtEmail.text.toString(), txtPassword.text.toString())
+        }
     }
 
-    private fun invalidForm(email : String, password : String) : Boolean{
-        if(email.isNullOrBlank() || password.isNullOrBlank()){
-            Toast.makeText(this, "Llene todos los campos", Toast.LENGTH_LONG).show()
-            return true
+    private fun authenticateUser(email: String, password: String) {
+        if (email.isNotBlank() && password.isNotBlank()) {
+            FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        startListaProductosActivity()
+                    } else {
+                        showToast(task.exception?.message ?: "Authentication failed.")
+                    }
+                }
+                .addOnFailureListener {
+                    showToast(it.message ?: "Authentication failed.")
+                }
+        } else {
+            showToast("Debe completar todos los datos")
         }
-
-        val regexEmail = Regex("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}\$")
-
-        if(!email.matches(regexEmail)){
-            Toast.makeText(this, "Ingrese un correo válido", Toast.LENGTH_LONG).show()
-            return true
-        }
-
-        val regexGmail = Regex("^[\\w-\\.]+@gmail\\.com\$")
-        val regexHotmail = Regex("^[\\w-\\.]+@hotmail\\.com\$")
-
-        if(!email.matches(regexGmail) && !email.matches(regexHotmail)){
-            Toast.makeText(this, "Este correo no tiene acceso a la aplicación", Toast.LENGTH_LONG).show()
-            return true
-        }
-
-        if(email.matches(regexGmail)){
-            typeMail = "gmail"
-            return false
-        }
-
-        if(email.matches(regexHotmail)){
-            typeMail = "hotmail"
-            return false
-        }
-
-        return false
     }
 
-    private fun initEvents(email : String) {
-        startActivity(Intent(this, ListadoActivity::class.java).apply {
-            putExtra("email", email)
-        })
+    private fun createUser(email: String, password: String) {
+        if (email.isNotBlank() && password.isNotBlank()) {
+            FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        startListaProductosActivity()
+                    } else {
+                        val errorMessage = task.exception?.message ?: "Registration failed."
+                        if (errorMessage.contains("email address is already in use")) {
+                            showToast("El usuario ya existe.")
+                        } else {
+                            showToast(errorMessage)
+                        }
+                    }
+                }
+                .addOnFailureListener {
+                    showToast(it.message ?: "Registration failed.")
+                }
+        } else {
+            showToast("Debe completar todos los datos")
+        }
+    }
+
+    private fun startListaProductosActivity() {
+        val intent = Intent(this, ListaProductosActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
     }
 }

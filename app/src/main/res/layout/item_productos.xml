@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.cardview.widget.CardView
+    android:id="@+id/Productoss"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -19,7 +22,7 @@
             android:layout_marginHorizontal="5dp"
             android:layout_weight="3">
             <androidx.constraintlayout.utils.widget.ImageFilterView
-                android:id="@+id/rvProductoImg"
+                android:id="@+id/imgProducto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:src="@drawable/googleg_disabled_color_18"/>
@@ -34,17 +37,19 @@
             android:layout_marginHorizontal="5dp"
             android:layout_weight="2">
             <TextView
-                android:id="@+id/rvProductoTitulo"
+                android:id="@+id/lblNombreProducto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:text="@string/producto"/>
             <TextView
-                android:id="@+id/rvProductoDescripcion"
+                android:id="@+id/lblDescripcion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/descripcion"/>
+
+
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.cardview.widget.CardView>
