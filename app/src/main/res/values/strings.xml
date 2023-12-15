@@ -43,4 +43,57 @@
         <item>unidad</item>
     </string-array>
 
+
+    <string name="lblListadoProductos">Catálogo de Productos</string>
+    <string name="lblTituloAgregar">Agregar Producto</string>
+    <string name="lblTituloEditar">Editar Producto</string>
+
+
+    <string name="lblDescripcion_AgregarProducto">Descripción</string>
+    <string name="lblMarca_AgregarProducto">Marca</string>
+    <string name="lblCategoría_AgregarProducto">Categoría</string>
+    <string name="lblPrecio_AgregarProducto">Precio</string>
+    <string name="lblFoto_AgregarProducto">Foto</string>
+    <string name="lblStock_AgregarProducto">Stock</string>
+    <string name="lblCantUnit_AgregarProducto">Cantidad Unitaria</string>
+    <string name="lblUniMed_AgregarProducto">Unidad de Medida</string>
+
+    <string name="lblIngresarNombre">Ingresar nombre</string>
+    <string name="lblIngresarDescripcion">Ingresar descripción</string>
+    <string name="lblIngresarPrecio">Ingresar Precio</string>
+    <string name="lblIngresarFoto">Ingresar URL de foto</string>
+    <string name="lblIngresarStock">Ingresar stock</string>
+    <string name="lblIngresarCantUnit">Ingresar cantidad unitaria</string>
+
+
+    <string name="btnEdit">Editar</string>
+    <string name="lblBtnBack">Volver a listado</string>
+    <string name="lblBtnAdd">Agregar producto</string>
+    <string name="txtTitleLogin">LogIn Catalogo Productos</string>
+
+    <string-array name="listMarca">
+        <item>Seleccione una marca</item>
+        <item>P y T</item>
+        <item>Razona</item>
+        <item>Sapolia</item>
+        <item>4M</item>
+    </string-array>
+
+    <string-array name="listUnidadMedida">
+        <item>Seleccione una unidad de medida</item>
+        <item>mg</item>
+        <item>ml</item>
+        <item>unidad</item>
+        <item>L</item>
+        <item>KG</item>
+    </string-array>
+
+    <string-array name="listCategoria">
+        <item>Seleccione una categoria</item>
+        <item>Limpieza</item>
+        <item>Aseo Personal</item>
+        <item>Eletrodomésticos</item>
+        <item>Ropa</item>
+    </string-array>
+
 </resources>
